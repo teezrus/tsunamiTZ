@@ -13,9 +13,11 @@
       border: none;
       outline: none;
       order: -1;
+      padding-left: 5px;
    }
 
    .menu-btn__burger {
+      margin-top: 15px;
       width: 16px;
       height: 4px;
       margin-left: -5px;
@@ -27,7 +29,7 @@
 
    .menu-btn__burger::after,
    .menu-btn__burger::before {
-      left: 50%;
+      left: 11px;
       content: "";
       position: absolute;
       width: 22px;
@@ -38,11 +40,11 @@
    }
 
    .menu-btn__burger::before {
-      transform: translate(-50%, -10px);
+      transform: translate(-50%, -8px);
    }
 
    .menu-btn__burger::after {
-      transform: translate(-50%, 10px);
+      transform: translate(-50%, 8px);
    }
 
    .menu-btn.active .menu-btn__burger {
@@ -51,11 +53,11 @@
    }
 
    .menu-btn.active .menu-btn__burger::before {
-      transform: rotate(45deg) translate(35px, -35px);
+      transform: rotate(45deg) translate(28px, -28px);
    }
 
    .menu-btn.active .menu-btn__burger::after {
-      transform: rotate(-45deg) translate(35px, 35px);
+      transform: rotate(-45deg) translate(28px, 28px);
    }
 
    .header {
