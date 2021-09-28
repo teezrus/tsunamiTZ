@@ -4,7 +4,6 @@
 @import "global";
 @import "node_modules/slick-slider/slick/slick.scss";
 
-
 // header start
 .header {
    padding: 7px 0;
@@ -65,10 +64,6 @@
    color: #fff;
    padding: 60px 0;
 
-   &__content {
-      z-index: 5;
-   }
-
    &__title {
       @extend %poppins-800;
       font-size: 64px;
@@ -123,6 +118,10 @@
    }
 }
 
+// top end 
+
+// description start 
+
 .description {
    &__title {
       padding-top: 120px;
@@ -147,6 +146,16 @@
       margin: 25px;
       padding: 120px 30px 30px;
       position: relative;
+
+      &::after {
+         content: '';
+         position: absolute;
+         background-image: url('../images/ditem-icon.svg');
+         width: 25px;
+         height: 25px;
+         bottom: 25px;
+         right: 24px;
+      }
    }
 
    &__item-img {
@@ -165,11 +174,16 @@
    }
 
    .slick-slide {
-      margin-top: 20px;
+      margin-top: 30px;
    }
 }
 
+// description end 
+
+// product start 
+
 .product {
+   padding-bottom: 100px;
 
    &__image {
       position: relative;
@@ -218,7 +232,7 @@
          transition: all .3s;
 
          &:hover {
-            color: #fff;
+            color: $accent;
          }
       }
    }
@@ -228,8 +242,12 @@
    }
 }
 
+// product end 
+
+// webform start 
+
 .webform {
-   padding-top: 140px;
+   padding-top: 35px;
    padding-bottom: 36px;
    background-color: #f8f6fa;
 
@@ -299,6 +317,11 @@
 
 }
 
+// webform end 
+
+
+// footer start 
+
 .footer {
    background-color: $accent;
    padding-top: 40px;
@@ -355,9 +378,6 @@
       margin-right: 25px;
    }
 
-
-   &__form-control {}
-
    &__btn {
       background-color: #fff;
       padding: 12px 34px;
@@ -367,13 +387,102 @@
    &__copy {
       padding: 16px 0 30px;
    }
+
+   .input-group {
+      max-width: 365px;
+   }
+
+
+   #validationCustom05 {
+      border: 1px solid #fff;
+      border-radius: 6px 0px 0px 6px;
+      background-color: transparent;
+      @extend %poppins-400;
+      color: #fff;
+
+      &::placeholder {
+         color: #E7DFED;
+      }
+
+      &:focus {
+         color: #656565;
+         background-color: #fff;
+         outline: 0;
+         box-shadow: 0 0 0 0rem #fff;
+      }
+   }
+
+
+
+   &__btn:hover {
+      background-color: #D2C0DF;
+   }
+
 }
 
-#validationCustom05 {
-   max-width: 200px;
-   border: 1px solid #fff;
-   border-radius: 6px 0px 0px 6px;
-   background-color: transparent;
+.footer__form-control:hover+.footer__btn {
+   background-color: #E7DFED;
 }
+
+// footer end 
+
+
+// modal  start
+
+.popup__bg {
+   position: fixed;
+   z-index: 999;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   background: rgba(0, 0, 0, 0.5);
+   opacity: 0;
+   pointer-events: none;
+   transition: 0.5s all;
+}
+
+.popup__bg.active {
+   opacity: 1;
+   pointer-events: all;
+   transition: 0.5s all;
+}
+
+.popup {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   background: #fff;
+   max-width: 589px;
+   width: 100%;
+   padding: 55px 95px;
+   transition: 0.5s all;
+   box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.1);
+   border-radius: 20px;
+
+   &__title {
+      color: #2A0953;
+      font-size: 36px;
+      line-height: 54px;
+      letter-spacing: -0.02em;
+      @extend %poppins-700;
+      margin-bottom: 25px;
+   }
+}
+
+.popup.active {
+   transform: translate(-50%, -50%) scale(1);
+   transition: 0.5s all;
+}
+
+.close-popup {
+   position: absolute;
+   top: 25px;
+   right: 25px;
+   cursor: pointer;
+}
+
+// modal end 
 
 @import "media";

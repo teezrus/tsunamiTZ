@@ -1,3 +1,4 @@
+// Кнопка меню
 $('.menu-btn').on('click', function () {
    $('.menu-btn').toggleClass('active');
 });
@@ -7,6 +8,17 @@ $('.nav-link').on('click', function () {
    $('.menu-btn').toggleClass('active');
 });
 
+// скролл к якорям
+let $page = $('html, body');
+$('a[href*="#"]').click(function () {
+   $page.animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+   }, 400);
+   return false;
+});
+
+
+// Слайдер на маленьких экранах
 if ($(window).width() <= 576) {
    $('.description__items').slick({
       arrows: false,
@@ -16,11 +28,12 @@ if ($(window).width() <= 576) {
    });
 }
 
+// Bootstrap 
 (function () {
    'use strict';
 
    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-   var forms = document.querySelectorAll('.needs-validation')
+   let forms = document.querySelectorAll('.needs-validation')
 
    // Loop over them and prevent submission
    Array.prototype.slice.call(forms)
@@ -39,7 +52,7 @@ if ($(window).width() <= 576) {
    'use strict';
 
    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-   var form = document.querySelector('.needs-validation1')
+   let form = document.querySelector('.needs-validation1');
 
    // Loop over them and prevent submission
    form.addEventListener('submit', function (event) {
@@ -51,9 +64,3 @@ if ($(window).width() <= 576) {
    });
 
 })();
-
-let input = document.body;
-input.oninput = function (e) {
-   e.target.style.color = "#2A0953";
-   //this.style.borderBottom = "1px solid #ccffcc";
-};

@@ -71,7 +71,11 @@ button {
 
 .form-control {
    @extend %poppins-400;
-   color: #656565;
+   color: #2A0953;
+
+   &::placeholder {
+      color: #656565;
+   }
 }
 
 .form-control:hover {
