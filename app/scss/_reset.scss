@@ -8,10 +8,6 @@ html {
    box-sizing: inherit;
 }
 
-ul[class],
-ol[class] {
-   padding: 0;
-}
 
 body,
 h1,
@@ -47,6 +43,7 @@ textarea,
 select {
    font: inherit;
 }
+
 a {
    text-decoration: none;
 }

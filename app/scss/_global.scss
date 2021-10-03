@@ -1,13 +1,15 @@
 html,
 body {
    height: 100%;
+   overflow-x: hidden;
 }
 
 body {
    color: $default;
+   user-select: none;
    font-size: 16px;
    line-height: 26px;
-   @extend %quicksand-500;
+   @extend %poppins-400;
    display: flex;
    flex-direction: column;
 }
@@ -19,4 +21,71 @@ main {
 button {
    border: none;
    outline: none;
+}
+
+
+.container {
+   max-width: 1200px;
+}
+
+.title {
+   padding-bottom: 16px;
+   position: relative;
+   font-size: 24px;
+   line-height: 36px;
+   letter-spacing: -0.02em;
+   color: $accent;
+   @extend %poppins-600;
+
+   &::before {
+      position: absolute;
+      content: '';
+      width: 97px;
+      height: 3px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $accentyellow;
+   }
+}
+
+.btn {
+   padding: 11px 68px;
+   border: 1px solid #fff;
+   color: #fff;
+   font-size: 16px;
+   line-height: 24px;
+   @extend %poppins-600;
+   border-radius: 8px;
+
+}
+
+.form-label {
+   font-size: 14px;
+   line-height: 21px;
+   @extend %poppins-600;
+   color: #7000FF;
+   margin-bottom: 5px;
+
+}
+
+.form-control {
+   @extend %poppins-400;
+   color: #2A0953;
+
+   &::placeholder {
+      color: #656565;
+   }
+}
+
+.form-control:hover {
+   border: 1px solid #8D6DB3;
+}
+
+.form-control:focus {
+   color: #212529;
+   background-color: #fff;
+   border-color: #2A0953;
+   outline: 0;
+   box-shadow: 0 0 0 0rem #fff;
 }
